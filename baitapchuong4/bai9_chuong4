@@ -1,0 +1,29 @@
+# nested_root.py
+import math
+
+def nested_root_iter(n):
+    """Tính căn lồng nhau bằng cách lập (từ trong ra ngoài)."""
+    if n <= 0:
+        return 0.0
+    val = math.sqrt(2.0)  # n = 1
+    for _ in range(2, n+1):
+        val = math.sqrt(2.0 + val)
+    return val
+
+def nested_root_formula(n):
+    """Công thức lượng giác: 2 * cos(pi / 2^(n+1))"""
+    return 2.0 * math.cos(math.pi / (2 ** (n + 1)))
+
+def main():
+    n = int(input("Nhập n (số dấu căn): ").strip())
+    if n <= 0:
+        print("n phải là số nguyên dương.")
+        return
+    it = nested_root_iter(n)
+    fm = nested_root_formula(n)
+    print(f"Kết quả (lặp): {it}")
+    print(f"Kết quả (công thức): {fm}")
+    print(f"Hiệu tuyệt đối: {abs(it - fm)}")
+
+if __name__ == "__main__":
+    main()

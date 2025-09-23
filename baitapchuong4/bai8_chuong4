@@ -1,0 +1,17 @@
+import math
+
+try:
+    x = float(input("Nhập x (>0): "))
+    a = float(input("Nhập cơ số a (>0, !=1): "))
+except ValueError:
+    print("Giá trị nhập không hợp lệ.")
+    raise SystemExit
+
+if x <= 0:
+    print("Sai: x phải > 0.")
+elif a <= 0 or abs(a - 1.0) < 1e-12:
+    print("Sai: a phải > 0 và khác 1.")
+else:
+    # cách 1: dùng math.log với base
+    result = math.log(x, a)          # hoặc: math.log(x) / math.log(a)
+    print(f"log_{a}({x}) = {result}")

@@ -1,0 +1,15 @@
+import math
+
+# đọc tọa độ A và B
+xA = float(input("xA = "))
+yA = float(input("yA = "))
+xB = float(input("xB = "))
+yB = float(input("yB = "))
+
+d = math.sqrt((xB - xA)**2 + (yB - yA)**2)
+print(f"Độ dài đoạn AB = {d}")
+
+
+
+
+
